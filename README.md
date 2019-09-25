@@ -44,7 +44,7 @@ roslaunch realsense_camera r200_nodelet_default.launch
 Check Raspberry Camera + AprilTags:
 Launch every command in a separate terminal, print the tag from [https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11] and see the coordinates echo.
 ```
-roslaunch usb_cam usb_cam.launch
+roslaunch usb_cam usb_cam-test.launch
 roslaunch apriltag_ros continuous_detection.launch
 rostopic echo /tag_detections
 ```
