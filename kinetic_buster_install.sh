@@ -75,6 +75,7 @@ sudo cp src/librealsense/config/99-realsense-libusb.rules  /etc/udev/rules.d
 # build distro
 cd ~/kinetic_ws
 mkdir blacklisted
+
 mv src/mv gazebo_ros_pkgs blacklisted/
 mv src/ros_controllers/ackermann_steering_controller/ blacklisted/
 sudo src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic -j1 -DCATKIN_ENABLE_TESTING=0
