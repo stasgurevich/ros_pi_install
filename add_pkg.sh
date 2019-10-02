@@ -1,3 +1,4 @@
+cd ~/kinetic_ws
 rosinstall_generator %1 --rosdistro kinetic --deps --wet-only --tar > add.rosinstall
 wstool merge -t src add.rosinstall
 wstool update -t src -j4
