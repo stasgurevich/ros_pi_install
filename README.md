@@ -1,17 +1,24 @@
 # ros_pi_install
 
-`ros_pi_install` is a single-liner to install ROS Kinetic on Raspberry Pi4 Raspbian Buster.
+`ros_pi_install` is a way to install ROS Kinetic on Raspberry Pi4 Raspbian Buster.
 
-Make a bootable SD card with  [clear Raspbian Buster image](https://www.raspberrypi.org/downloads/), connect to WiFi, then execute the following:
+You need a Raspberry Pi4 with 2GB or 4GB and SD card >= 32 GB. *Please note that the complete install will take about 18 gigs, so 8GB and 16GB cards will not work.*
+
+Make a bootable SD card with  [clear Raspbian Buster image](https://www.raspberrypi.org/downloads/), connect to WiFi, open the terminal and execute the following:
 ```
-curl https://raw.githubusercontent.com/stasgurevich/ros_pi_install/master/kinetic_buster_install.sh | bash -s
+git clone https://github.com/stasgurevich/ros_pi_install.git
+cd ros_pi_install
+bash -x prepare.sh
 ```
-in your terminal. 
+
+This will update your system and will install Boost 1.58 and PCL 1.8.1 from sources. (takes approx 3 hours)
+
+
 
 ## What you will get
 
-- ROS Kinetic desktop (core components + rviz)
-- [ROS Control library](http://wiki.ros.org/ros_control)
+- ROS Kinetic desktop (core packages + rviz)
+- [ROS Control library](http://wiki.ros.org/ros_control) + ros_controllers
 - GPIO Serial port pins - support via [ROS serial](http://wiki.ros.org/serial)
 - Apriltag 3 fiducial markers detection via [apriltag_ros](http://wiki.ros.org/apriltag_ros)
 - Kinect 360 support via [openni_launch](http://wiki.ros.org/openni_launch) and [freenect_launch](http://wiki.ros.org/freenect_launch), tuned to work on RPi (remember to use USB 2 port)
