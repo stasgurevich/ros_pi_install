@@ -46,7 +46,7 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 sed -i 's=return (plane_coeff_d_);=return ((std::vector<float>\&)plane_coeff_d_);=' ../segmentation/include/pcl/segmentation/ground_plane_comparator.h
 sed -i 's=return (plane_coeff_d_);=return ((std::vector<float>\&)plane_coeff_d_);=' ../segmentation/include/pcl/segmentation/plane_coefficient_comparator.h
 # -j2 works on Pi4 4GB -j4 doesn't
-make -j1
+make -j4
 sudo make install  
 
 # install Kinect 360 driver for OpenNI
