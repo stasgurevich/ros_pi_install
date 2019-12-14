@@ -48,6 +48,7 @@ sed -i 's=return (plane_coeff_d_);=return ((std::vector<float>\&)plane_coeff_d_)
 # -j2 works on Pi4 4GB -j4 doesn't
 make -j4
 sudo make install  
+sudo cp  ~/kinetic_ws/pcl-pcl-1.8.1/surface/include/pcl /usr/include -R
 
 # install Kinect 360 driver for OpenNI
 echo "$TIMESTAMP Install Kinect 360 driver for OpenNI" | tee -a $LOGFILE
